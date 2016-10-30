@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>pictureChange</title>
+    <script type="text/javascript">
+        var i=0;
+        function start_time()
+        {
+
+            int=setInterval("timerun()",50);
+
+        }
+        function timerun()
+        {
+            var time=document.getElementById("time");
+            time.src="images/num"+(i++)+".jpg";
+        }
+        function stop_time()
+        {
+            window.clearInterval(int);
+        }
+
+    </script>
+</head>
+<body>
+    <img style="width: 100px;" src="images/num0.jpg" id=time"/>
+
+    <input type="button" value="开始计数" onclick="start_time()"/>
+    <input type="button" value="停止计数" onclick="stop_time()"/>
+</body>
+</html>

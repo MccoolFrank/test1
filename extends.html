@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>extends</title>
+
+    <script type="text/javascript">
+       // js 中没有 extends，通过对象冒充进行继承。
+        function MidStu(name,age)
+        {
+            this.name=name;
+            this.age=age;
+            this.show=function()
+            {
+                window.alert(name+age);
+
+            };
+            this.fee=function(money)
+            {
+                window.alert("fee= "+money*0.8);
+
+            }
+        }
+        function Pupil(name,age)
+        {
+            this.name=name;
+            this.age=age;
+            this.show=function()
+            {
+                window.alert(name+age);
+
+            };
+            this.fee=function(money)
+            {
+                window.alert("fee= "+money*0.5);
+            }
+        }
+
+
+        //减少代码冗余，使用继承方法
+        function Stu(name,age)
+        {
+            this.name=name;
+            this.age=age;
+
+            this.show=function()
+            {
+                window.alert(name+age);
+            }
+        }
+        function MidStu(name,age)
+
+        {
+            this.stu=Stu;
+            this.stu(name,age); //js 中采用对象冒充，实现继承 this.fee=function(money)
+            {
+                window.alert("fee= "+money*0.8);
+            }
+        }
+
+
+        function Pupil(name,age)
+        {
+            this.stu=Stu;
+            this.stu(name,age); //js 中采用对象冒充，实现继承 this.fee=function(money)
+            {
+                window.alert("fee= "+money*0.5);
+            }
+        }
+
+        var midStu=new MidStu("hujun",23);
+        midStu.show();
+        midStu.fee(1000);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

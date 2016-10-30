@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>onclick</title>
+    <script type="text/javascript">
+        function change(e)
+        {
+            var div1=document.getElementById("div1");
+            if(e.value=="skyblue")
+            {
+                div1.style.backgroundColor='skyblue';
+            }
+            else
+            {
+                div1.style.backgroundColor='pink';
+            }
+        }
+
+    </script>
+</head>
+<body>
+    <div id="div1" style="width:400px;height:300px; background-color:pink" >
+    </div>
+
+    <input type="button" value="pink" onclick="change(this)"/>
+    <input type="button" value="skyblue" onclick="change(this)"/>
+</body>
+</html>

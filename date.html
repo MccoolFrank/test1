@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>date类型</title>
+    <script type="text/javascript">
+        var now=new Date();
+        alert(now);//显示当前的时间
+
+        var someDate=new Date(Date.parse("May 25,2004"));
+        var someDate1=new Date("May 25,2004");
+        var someDate2=new Date(Date.UTC(2000,0));
+
+        alert(someDate.toLocaleString());
+        alert(someDate.toString());
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
