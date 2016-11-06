@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>string</title>
+    <script type="text/javascript">
+
+        var s="hello world";
+        alert(s.length);//11
+        //两种方法访问字符串中的特定位字符
+        alert(s.charAt(1));//e
+        alert(s[1]);
+        //查看字符编码
+        alert(s.charCodeAt(1));//101
+
+        //字符串操作方法
+        var s1="hello";
+        var result=s1.concat(" world","!");
+        alert("s1:"+s1);//hello
+        alert("result:"+result);//hello world!
+
+        var s2="hello world";
+        //参数为正数
+        //三个方法全都是从第四位开始截取
+        alert(s2.slice(3));//lo world
+        alert(s2.substring(3));
+        alert(s2.substr(3));
+
+        //slice(),substring()两个方法是从下标为3开始，截到下标为6结束
+        alert(s2.slice(3,7));//lo w
+        alert(s2.substring(3,7));
+        //substr()方法是从小标3开始截取7位
+        alert(s2.substr(3,7));//lo worl
+
+        /*
+         当参数中有负数时：
+         slice()方法会将负数与字符串长度相加
+         substr()方法会将第一参数加上字符串长度，第二个参数转换为0
+         substring()方法会将所有参数转换为0
+         */
+        alert(s2.slice(-3));//rld
+        alert(s2.substring(-3));//hello world
+        alert(s2.substr(-3));//rld
+
+        alert(s2.slice(3,-4));//lo w
+        alert(s2.substring(3,-4));//hel
+
+        //字符串位置方法
+        var s3="hello world";
+        alert(s3.indexOf("o"));//4
+        alert(s3.lastIndexOf("o"));//7
+        //从下标为6的位置向后开始找
+        alert(s3.indexOf("o",6));//7
+        //从下标为6的位置开始向前找
+        alert(s3.lastIndexOf("o",6));//4
+
+        var string="dhhde  dhdhdedgd  eedff";
+        var positions=new Array();
+        var pos=string.indexOf("e");
+
+        while(pos>-1){
+            positions.push(pos);
+            pos=string.indexOf("e",pos+1);
+        }
+        alert(positions);
+
+        //trim()方法 创建一个字符串副本，删除前缀及后缀所有空格
+        var s4="  hello world  ";
+        var trims=s4.trim();
+        alert("s4: "+s4);
+        alert("trim:"+trims);
+
+
+        //字符串的模式匹配方法
+        var text="cat,bat,sat,fat";
+        var pattern=/.at/;
+        var matches=text.match(pattern);
+        alert(matches.index);//0
+        alert(matches[0]);//cat
+
+        var post=text.search(/at/);
+        alert("post: "+post);//1
+
+        var result1=text.replace(/at/,"ond");
+        alert("result1: "+result1);
+        var result2=text.replace(/at/g,"ond");
+        alert("result2: "+result2);
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

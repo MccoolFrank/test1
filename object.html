@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>object</title>
+    <script type="text/javascript">
+        var person=new Object();
+        person.name="wangziyue";
+        person.age=22;
+        person.job="student";
+        person.sayName=function(){
+            alert(this.name);
+        };
+
+        var person1={
+            name:"wangzi",
+            age:22,
+            job:"student",
+            sayName:function(){
+                alert(this.name);
+            }
+        };
+
+        //属性类型
+        //configurable,鞥否通过delete删除属性
+        //enumerable.能否通过for-in循环返回属性
+        //writable,能否修改属性的值
+        //value,包含这个属性的数据值，读取属性值的时候，从这个位置读
+        //通过Object.definProperty
+
+        var person2={};
+        Object.defineProperty(person2,"name",{
+            writable:false,
+            configurable:false,
+            value:"Lucy"
+        });
+        alert("before: "+person2.name);//lucy
+        person2.name="Wangzi";
+        alert("after: "+person2.name);//lucy
+
+        delete person2.name;
+        alert("delete: "+person2,name);
+
+        //访问器属性
+        //get 在读取属性时调用的函数
+        //set 在写入属性时调用的函数
+
+        //year为访问器属性
+        var book={
+            _year:2004,
+            edition:1
+        };
+        alert("   ");
+        Object.defineProperty(book,"year",{
+            get:function () {
+                return this._year;
+            },
+            set:function (newValue) {
+                if(newValue>2004){
+                    this._year=newValue;
+                    this.edition+=newValue-2004;
+                }
+
+            }
+        });
+        book.year=2005;
+        alert("edition: "+book.edition);//2
+
+        //定义多个属性
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

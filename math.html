@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>math</title>
+    <script type="text/javascript">
+        var max=Math.max(5,54,32,16);
+        alert("max:"+max);//54
+        var min=Math.min(5,54,32,16);
+        alert("min:"+min);//5
+
+        var values=[1,2,3,4,5,6];
+        max=Math.max.apply(Math,values);
+        alert(max);
+
+        //舍入方法
+        //Math.ceil()向上舍入
+        //Math.floor()向下舍入
+        //Math.round()四舍五入
+        alert(Math.ceil(25.1));
+        alert(Math.ceil(25.6));
+        alert("  ");
+        alert(Math.floor(25.1));
+        alert(Math.floor(25.6));
+        alert("  ");
+        alert(Math.round(25.1));
+        alert(Math.round(25.6));
+
+        var num=Math.floor(Math.random()*10+1);//1-10之间的随机数
+        alert(num);
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>move</title>
+    <script type="text/javascript">
+        function move()
+        {
+            $("div_top").firstChild.style.color="pink";
+        }
+        function mouseout()
+        {
+            $("div_top").firstChild.style.color="red";
+        }
+        var flag=0;
+        function Drag(e)
+        {
+            if(flag)
+            {
+                $("div1").style.left=e.clientX-75;
+                $("div1").style.top=e.clientY-15;
+            }
+            //document.write(e.clientX+","+e.clientY);
+        }
+        function startDrag()
+        {
+            flag=1;
+        }
+        function stopDrag()
+        {
+            flag=0;
+        }
+        function $(id)
+        {
+            return document.getElementById(id);
+        }
+    </script>
+    <link rel="stylesheet" type="text/css" href="moveBox.css">
+</head>
+<body>
+   <div id="div1" class="div1">
+       <div id="div_top" class="div_top" onmouseover="move()" onmouseout="mouseout()" onmousedown="startDrag()"
+            onmousemove="Drag(event)" onmouseup="stopDrag()">
+           <span style="color:red">可移动窗口</span></div>
+       <div id="div_bottom" class="div_bottom"></div></div>
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>change</title>
+    <script type="text/javascript">
+        function change(obj)
+        {
+            var tank=document.getElementById("tank");
+            switch(obj.value)
+            {
+                case "上":
+                {
+                    tank.style.backgroundPositionY="0px";
+                    break;
+                }
+
+                case "下":
+                {
+                    tank.style.backgroundPositionY="40px";
+                    break;
+                }
+
+                case "左":
+                {
+                    tank.style.backgroundPositionY="-40px";
+                    break;
+                }
+
+                case "右":
+                {
+                    tank.style.backgroundPositionY="80px";
+                    break;
+                }
+
+            }
+
+        }
+    </script>
+</head>
+<body>
+<div id="tank" style="background-position-y:0px; background-image:url('images/tank1.png'); width:40px;height:40px"></div><br/>
+<input type="button" value="上" onclick="change(this)"/>
+<input type="button" value="右" onclick="change(this)"/>
+<input type="button" value="下" onclick="change(this)"/>
+<input type="button" value="左" onclick="change(this)"/>
+</body>
+</html>

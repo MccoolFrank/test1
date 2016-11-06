@@ -1,0 +1,29 @@
+.div1
+{
+
+    position:absolute;
+    left:200px;
+    top:200px;
+
+}
+.div_top
+{
+
+    border:1px solid black;
+    width:150px;
+    height:30px;
+    background-color:blue;
+    text-align:left;
+    line-height:30px;
+    cursor:hand
+
+}
+.div_bottom
+{
+
+    border:1px solid black;
+    width:150px;
+    height:150px;
+    background-color:skyblue;
+
+}
